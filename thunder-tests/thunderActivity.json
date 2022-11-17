@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "e1b32aac-12c3-47e2-ad21-440f23918716",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:https/4000/tickets/types",
+    "url": "localhost:https/4000/tickets/types",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-17T18:46:17.097Z",
+    "modified": "2022-11-17T18:46:17.097Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a2510396-108a-46ad-bf8a-bf6ef57db2cd",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:4000/tickets/types",
+    "url": "localhost:4000/tickets/types",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-17T18:46:46.331Z",
+    "modified": "2022-11-17T18:46:46.331Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
