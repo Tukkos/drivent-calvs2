@@ -39,3 +39,7 @@ export type TicketType = {
   createdAt?: Date,
   updatedAt?: Date,
 }
+
+export type ticketTypeId = {
+  ticketTypeId: number,
+}

@@ -1,8 +1,11 @@
 import { AuthenticatedRequest } from "@/middlewares";
+import { ticketTypeId } from "@/protocols";
 import enrollmentsService from "@/services/enrollments-service";
 import ticketsService from "@/services/tickets-service";
+import { Enrollment } from "@prisma/client";
 import { Response } from "express";
 import httpStatus from "http-status";
+import { getEnrollmentByUser } from "./enrollments-controller";
 
 export async function getTicketsType(req: AuthenticatedRequest, res: Response) {
   try {
@@ -28,15 +31,22 @@ export async function getTickets(req: AuthenticatedRequest, res: Response) {
 }
 
 export async function postTickets(req: AuthenticatedRequest, res: Response) {
-  const { ticketTypeId } = req.body;
+  const { userId } = req;
+  const { ticketTypeId } = req.body as ticketTypeId;
+
+  if (!ticketTypeId) {
+    return res.sendStatus(httpStatus.BAD_REQUEST);
+  }
+
   try {
-    const result = await ticketsService.postTicketReservation({
-      ...req.body,
-      ticketTypeId: ticketTypeId,
-    });
+    const enrollment = await enrollmentsService.getOneWithAddressByUserId(userId) as Enrollment;
+
+    await ticketsService.postTicketReservation(ticketTypeId, enrollment);
+
+    const result = await ticketsService.getTicketsResponseById(enrollment);
 
     return res.send(httpStatus.CREATED).send(result);
   } catch (error) {
-    return res.sendStatus(httpStatus.BAD_REQUEST);
+    return res.sendStatus(httpStatus.NOT_FOUND);
   }
 }

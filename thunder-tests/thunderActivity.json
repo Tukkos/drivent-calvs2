@@ -26,5 +26,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "35cb92dd-dad8-41ad-a771-253e95a881d6",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:4000/tickets",
+    "url": "localhost:4000/tickets",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-11-18T15:21:16.755Z",
+    "modified": "2022-11-18T15:21:16.755Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"ticketTypeId\": \"1088\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
