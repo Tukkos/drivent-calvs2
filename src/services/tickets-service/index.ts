@@ -10,11 +10,15 @@ async function getTicketsResponse() {
   return tickets[0];
 }
 
-// type TicketTypeOrEmpty = Partial<TicketType>
+async function postTicketReservation(ticketTypeId: number) {
+  const result = await ticketsRepository.postTicket();
+  return result;
+}
 
 const ticketsService = {
   getTicketTypesResponse,
   getTicketsResponse,
+  postTicketReservation,
 };
 
 export default ticketsService;

@@ -12,13 +12,18 @@ async function findTicket() {
   });
 }
 
-// async function postTicket() {
-//     return prisma.ticket.create({})
-// }
+async function postTicket() {
+  // return prisma.ticket.create({
+  //   data: {
+
+  //   }
+  // })
+}
 
 const ticketsRepository = {
   findTicketType,
   findTicket,
+  postTicket,
 };
 
 export default ticketsRepository;
