@@ -12,14 +12,15 @@ export async function getTicketsType(req: AuthenticatedRequest, res: Response) {
   }
 }
 
-// export async function getTickets(req: AuthenticatedRequest, res: Response) {
+export async function getTickets(req: AuthenticatedRequest, res: Response) {
+  try {
+    const ticket = await ticketsService.getTicketsResponse();
 
-//     try {
-        
-//     } catch (error) {
-//         return res.sendStatus(httpStatus.NO_CONTENT);
-//     }
-// }
+    return res.status(httpStatus.OK).send(ticket);
+  } catch (error) {
+    return res.sendStatus(httpStatus.NO_CONTENT);
+  }
+}
 
 // export async function postTickets(req: AuthenticatedRequest, res: Response) {
 
