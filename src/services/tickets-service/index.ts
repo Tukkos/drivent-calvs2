@@ -11,6 +11,16 @@ async function getTicketsResponse(userId: number) {
   return tickets;
 }
 
+async function getTicketResponseByTitcketId(ticketId: number) {
+  const ticket = await ticketsRepository.findTicketByTicketId(ticketId);
+  return ticket;
+}
+
+async function getTicketsResponseByTicketAndUserId(userId: number, ticketId: number) {
+  const ticket = await ticketsRepository.findTicketByUserAndTicketId(userId, ticketId);
+  return ticket;
+}
+
 async function postTicketReservation(ticketTypeId: number, enrollment: Enrollment) {
   const result = await ticketsRepository.postTicket(ticketTypeId, enrollment);
   console.log(result);
@@ -25,6 +35,8 @@ async function getTicketsResponseByEnrollmentId(enrollment: Enrollment) {
 const ticketsService = {
   getTicketTypesResponse,
   getTicketsResponse,
+  getTicketResponseByTitcketId,
+  getTicketsResponseByTicketAndUserId,
   postTicketReservation,
   getTicketsResponseByEnrollmentId,
 };

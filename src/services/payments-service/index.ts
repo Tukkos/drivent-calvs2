@@ -3,7 +3,6 @@ import paymentsRepository from "@/repositories/payments-repository";
 
 async function getPaymentResponse(ticketId: number): Promise<PaymentType> {
   const tickets = await paymentsRepository.findPayment(ticketId);
-  console.log(tickets);
   return tickets;
 }
 
