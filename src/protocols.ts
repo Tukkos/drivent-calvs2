@@ -40,10 +40,6 @@ export type TicketType = {
   updatedAt?: Date,
 }
 
-export type ticketTypeId = {
-  ticketTypeId: number,
-}
-
 export type PaymentType = {
   id: number,
   ticketId: number,

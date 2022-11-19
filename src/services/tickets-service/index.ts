@@ -6,9 +6,9 @@ async function getTicketTypesResponse() {
   return tickets;
 }
 
-async function getTicketsResponse() {
-  const tickets = await ticketsRepository.findTicket();
-  return tickets[0];
+async function getTicketsResponse(userId: number) {
+  const tickets = await ticketsRepository.findTicketByUserId(userId);
+  return tickets;
 }
 
 async function postTicketReservation(ticketTypeId: number, enrollment: Enrollment) {
@@ -17,7 +17,7 @@ async function postTicketReservation(ticketTypeId: number, enrollment: Enrollmen
   return result;
 }
 
-async function getTicketsResponseById(enrollment: Enrollment) {
+async function getTicketsResponseByEnrollmentId(enrollment: Enrollment) {
   const tickets = await ticketsRepository.findTicketByEnrollments(enrollment);
   return tickets;
 }
@@ -26,7 +26,7 @@ const ticketsService = {
   getTicketTypesResponse,
   getTicketsResponse,
   postTicketReservation,
-  getTicketsResponseById,
+  getTicketsResponseByEnrollmentId,
 };
 
 export default ticketsService;

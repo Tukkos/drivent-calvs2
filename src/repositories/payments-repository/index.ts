@@ -3,8 +3,10 @@ import { prisma } from "@/config";
 async function findPayment(ticketId: number) {
   return prisma.payment.findFirst({
     where: {
-      ticketId: ticketId,
-    }
+      Ticket: {
+        id: ticketId,
+      },
+    },
   });
 }
 
