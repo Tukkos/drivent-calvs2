@@ -45,5 +45,46 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "3fbbaf3b-b0f1-4a89-8e0c-ba91e91ce9cc",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:4000/payments",
+    "url": "localhost:4000/payments",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-19T13:32:23.436Z",
+    "modified": "2022-11-19T13:34:11.876Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "ticketId",
+        "value": "2",
+        "isDisabled": true,
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "1b5cb993-79dd-4bcd-bd60-51ca612959bc",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:4000/payments?ticketId=2",
+    "url": "localhost:4000/payments?ticketId=2",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-19T13:33:41.234Z",
+    "modified": "2022-11-19T13:33:41.234Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "ticketId",
+        "value": "2",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]

@@ -5,7 +5,6 @@ import ticketsService from "@/services/tickets-service";
 import { Enrollment } from "@prisma/client";
 import { Response } from "express";
 import httpStatus from "http-status";
-import { getEnrollmentByUser } from "./enrollments-controller";
 
 export async function getTicketsType(req: AuthenticatedRequest, res: Response) {
   try {
@@ -17,8 +16,6 @@ export async function getTicketsType(req: AuthenticatedRequest, res: Response) {
 }
 
 export async function getTickets(req: AuthenticatedRequest, res: Response) {
-  const { userId } = req;
-
   try {
     const ticket = await ticketsService.getTicketsResponse();
     if (!ticket) {
