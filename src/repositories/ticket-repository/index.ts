@@ -58,6 +58,17 @@ async function findTicketByEnrollments(enrollment: Enrollment) {
   });
 } 
 
+async function updateTicketPaid(ticketId: number) {
+  return prisma.ticket.update({
+    where: {
+      id: ticketId,
+    },
+    data: {
+      status: "PAID"
+    }
+  });
+}
+
 const ticketsRepository = {
   findTicketType,
   findTicketByUserId,
@@ -65,6 +76,7 @@ const ticketsRepository = {
   findTicketByUserAndTicketId,
   postTicket,
   findTicketByEnrollments,
+  updateTicketPaid,
 };
 
 export default ticketsRepository;
